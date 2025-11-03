@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simon Emmanuel Madalla — Dallah Tech</title>
+  <meta name="description" content="Simon Emmanuel Madalla | Web Developer, Designer & AI enthusiast. Portfolio and project links." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#071021; /* near-black blue */
+      --card:#0e1724;
+      --muted:#9fb0c8;
+      --accent:#00b4ff;
+      --accent-glow:rgba(0, 180, 255, 0.3);
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --maxwidth:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(0,180,255,0.04), transparent),
+                  linear-gradient(180deg, rgba(2,8,23,1) 0%, var(--bg) 100%);
+      color:#d7e7f3;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px 20px;
+      display:flex;justify-content:center;align-items:flex-start;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    /* Tech Background Elements */
+    .tech-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    
+    .grid-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(0, 180, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 180, 255, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+      opacity: 0.3;
+    }
+    
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: float 15s infinite linear;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.7;
+      }
+      90% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(20px);
+        opacity: 0;
+      }
+    }
+    
+    .wrap{width:100%;max-width:var(--maxwidth);position:relative;z-index:1}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:16px;align-items:center}
+    .logo{
+      width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#6af0ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#021126;box-shadow:0 6px 18px rgba(0,0,0,0.5);
+      transition: all 0.3s ease;
+    }
+    .logo:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 180, 255, 0.4);
+    }
+    .brand h1{margin:0;font-size:18px;line-height:1}
+    .brand p{margin:0;color:var(--muted);font-size:13px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600;font-size:14px;transition:color 0.3s ease}
+    nav a:hover{color:var(--accent)}
+
+    main{display:grid;grid-template-columns:1fr 360px;gap:28px}
+
+    /* Hero */
+    .hero{
+      padding:28px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      backdrop-filter:blur(6px);
+      box-shadow:0 8px 30px rgba(2,8,23,0.6);
+      border: 1px solid rgba(255,255,255,0.03);
+      transition: all 0.3s ease;
+    }
+    .hero:hover {
+      box-shadow: 0 10px 40px rgba(2,8,23,0.8);
+    }
+    .hero-top{display:flex;gap:20px;align-items:center}
+    .avatar{
+      width:88px;height:88px;border-radius:12px;
+      background:linear-gradient(90deg,#001a2a 0%, #002731 100%);
+      display:flex;align-items:center;justify-content:center;
+      font-size:28px;font-weight:700;color:var(--accent);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    .avatar:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 180, 255, 0.2);
+    }
+    .intro h2{margin:0;font-size:22px}
+    .intro p{margin:6px 0 0;color:var(--muted)}
+    .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{
+      padding:10px 14px;border-radius:10px;border:0;
+      background:linear-gradient(90deg,var(--accent),#6af0ff);
+      color:#021126;font-weight:700;cursor:pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 180, 255, 0.2);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 180, 255, 0.4);
+    }
+    .btn.ghost{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      color:var(--muted);
+      box-shadow: none;
+    }
+    .btn.ghost:hover {
+      background: rgba(255,255,255,0.05);
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* Tech Images Section */
+    .tech-showcase {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    
+    .tech-item {
+      border-radius: 10px;
+      overflow: hidden;
+      height: 120px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .tech-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 180, 255, 0.2);
+    }
+    
+    .tech-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7) contrast(1.1);
+      transition: all 0.5s ease;
+    }
+    
+    .tech-item:hover img {
+      filter: brightness(0.9) contrast(1.2);
+      transform: scale(1.05);
+    }
+    
+    .tech-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: white;
+    }
+
+    /* Sidebar */
+    aside{
+      padding:18px;
+      background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      height:fit-content;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+    .card{
+      background:var(--card);
+      padding:18px;
+      border-radius:12px;
+      margin-bottom:18px;
+      border: 1px solid rgba(255,255,255,0.03);
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+    .card h3{
+      margin:0 0 12px 0;
+      font-size: 18px;
+      color: var(--accent);
+      position: relative;
+      display: inline-block;
+    }
+    .card h3::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    .skill{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{
+      padding:6px 10px;border-radius:999px;
+      background:var(--glass);
+      color:var(--muted);font-weight:600;font-size:13px;
+      transition: all 0.3s ease;
+    }
+    .chip:hover {
+      background: rgba(0, 180, 255, 0.1);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* Projects */
+    .projects{margin-top:18px;display:grid;gap:12px}
+    .proj{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:16px;border-radius:10px;
+      background:linear-gradient(135deg, rgba(255,255,255,0.01), transparent);
+      border:1px solid rgba(255,255,255,0.02);
+      transition: all 0.3s ease;
+    }
+    .proj:hover {
+      background: rgba(255,255,255,0.02);
+      border-color: rgba(0, 180, 255, 0.1);
+      transform: translateX(5px);
+    }
+    .proj a{
+      color:var(--accent);text-decoration:none;font-weight:700;
+      transition: all 0.3s ease;
+    }
+    .proj a:hover {
+      text-shadow: 0 0 8px var(--accent-glow);
+    }
+
+    /* Contact */
+    form{display:flex;flex-direction:column;gap:8px}
+    input,textarea{
+      padding:10px;border-radius:8px;
+      border:1px solid rgba(255,255,255,0.06);
+      background:transparent;color:inherit;font-size:14px;
+      transition: all 0.3s ease;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--accent-glow);
+    }
+    textarea{min-height:100px}
+    .note{font-size:13px;color:var(--muted)}
+
+    footer{
+      margin-top:20px;color:var(--muted);font-size:13px;
+      text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255,255,255,0.03);
+    }
+
+    /* Section Headers */
+    h3 {
+      color: var(--accent);
+      margin-top: 0;
+      position: relative;
+      display: inline-block;
+    }
+    h3::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width:980px){
+      main{grid-template-columns:1fr} 
+      aside{order:2} 
+      .wrap{padding-bottom:80px}
+      .hero-top {
+        flex-direction: column;
+        text-align: center;
+      }
+      .cta {
+        justify-content: center;
+      }
+      .tech-showcase {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+      nav {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+      }
+      nav a {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Tech Background -->
+  <div class="tech-bg">
+    <div class="grid-overlay"></div>
+    <div class="particles" id="particles"></div>
+  </div>
+
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">DM</div>
+        <div>
+          <h1>Simon Emmanuel Madalla — <span style="color:var(--accent)">Dallah Tech</span></h1>
+          <p>Computer Science Major • Web Developer • AI Enthusiast</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-top">
+          <div class="avatar">SM</div>
+          <div class="intro">
+            <h2>Hi — I'm <strong>Simon Emmanuel Madalla</strong>.</h2>
+            <p>I build clean, responsive websites and logos. I use HTML, CSS, JavaScript and AI tools to deliver thoughtful designs and usable products.</p>
+            <div class="cta">
+              <button class="btn" id="viewProjects">View Projects</button>
+              <button class="btn ghost" id="contactMe">Contact Me</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects" id="projects">
+          <h3 style="margin-top:18px">Featured Projects</h3>
+
+          <!-- Add your deployed project links below. Copy and paste your URLs in the hrefs -->
+          <div class="proj">
+            <div>
+              <div style="font-weight:700">ExploreNaija Tours — Travel Website</div>
+              <div class="note">Simple multi-page travel & bookings demo</div>
+            </div>
+            <div><a href="#" target="_blank" rel="noopener">View live</a></div>
+          </div>
+
+          <div class="proj">
+            <div>
+              <div style="font-weight:700">Birthday Wisher — Interactive Page</div>
+              <div class="note">Personalized birthday greeting generator</div>
+            </div>
+            <div><a href="#" target="_blank" rel="noopener">View live</a></div>
+          </div>
+
+          <div class="proj">
+            <div>
+              <div style="font-weight:700">Client Site — Example</div>
+              <div class="note">Landing page built and deployed for a local business</div>
+            </div>
+            <div><a href="#" target="_blank" rel="noopener">View live</a></div>
+          </div>
+
+          <p class="note">Tip: Replace the <code>#</code> links above with your real deployed URLs (GitHub Pages, Netlify, etc.) so visitors can open your work.</p>
+        </div>
+
+        <div style="margin-top:18px">
+          <h3>About</h3>
+          <p class="note">I'm a Computer Science major and freelance web developer. My work blends functional front-end development with thoughtful UI design. I also use AI tools to speed up content, prototyping, and creative tasks.</p>
+        </div>
+        
+        <!-- Tech Images Showcase -->
+        <div style="margin-top:28px">
+          <h3>Tech Stack & Tools</h3>
+          <div class="tech-showcase">
+            <div class="tech-item">
+              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Code Editor">
+              <div class="tech-label">Development</div>
+            </div>
+            <div class="tech-item">
+              <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="React Development">
+              <div class="tech-label">React</div>
+            </div>
+            <div class="tech-item">
+              <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="AI Technology">
+              <div class="tech-label">AI Tools</div>
+            </div>
+            <div class="tech-item">
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Mobile Development">
+              <div class="tech-label">Mobile</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3 id="skills">Skills</h3>
+          <div class="skill">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Responsive Design</span>
+            <span class="chip">CorelDRAW</span>
+            <span class="chip">AI Tools</span>
+            <span class="chip">Git</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Contact</h3>
+          <p class="note">Email: <strong><span id="email">your.email@example.com</span></strong></p>
+          <p class="note">Socials: <a href="#" style="color:var(--accent)">GitHub</a> • <a href="#" style="color:var(--accent)">LinkedIn</a></p>
+        </div>
+
+        <div class="card">
+          <h3>Quick Bio</h3>
+          <p class="note">I craft small business websites, logos and interactive web pages. If you need a friendly developer who delivers on deadline, let's talk.</p>
+        </div>
+
+        <div class="card">
+          <h3 id="contact">Contact Form</h3>
+          <form id="contactForm">
+            <input type="text" id="name" placeholder="Your name" required>
+            <input type="email" id="emailInput" placeholder="Email" required>
+            <textarea id="message" placeholder="Your message"></textarea>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+          <p id="formFeedback" class="note" style="margin-top:8px"></p>
+        </div>
+
+      </aside>
+    </main>
+
+    <footer>
+      <p>Built by <strong>Simon Emmanuel Madalla</strong> — <em>Dallah Tech</em>. • Code & design showcase.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Create animated particles for tech background
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 50;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Random position
+        const left = Math.random() * 100;
+        const top = Math.random() * 100;
+        
+        // Random size
+        const size = Math.random() * 3 + 1;
+        
+        // Random animation delay and duration
+        const delay = Math.random() * 15;
+        const duration = Math.random() * 10 + 15;
+        
+        particle.style.left = `${left}%`;
+        particle.style.top = `${top}%`;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.animationDelay = `${delay}s`;
+        particle.style.animationDuration = `${duration}s`;
+        
+        particlesContainer.appendChild(particle);
+      }
+    }
+    
+    // Initialize particles
+    createParticles();
+
+    // Smooth scroll to projects & contact
+    document.getElementById('viewProjects').addEventListener('click', ()=>{
+      document.getElementById('projects').scrollIntoView({behavior:'smooth'});
+    });
+    document.getElementById('contactMe').addEventListener('click', ()=>{
+      document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+    });
+
+    // Contact form — This shows a simple success message client-side.
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value || 'Friend';
+      const email = document.getElementById('emailInput').value || 'no-reply';
+      const message = document.getElementById('message').value || '';
+      const feedback = document.getElementById('formFeedback');
+      // For now, we won't send emails. Instead display a confirmation and copy to console for testing.
+      feedback.textContent = `Thanks ${name}! I received your message (preview in console). I will reply to ${email} when available.`;
+      console.log('Contact form submission:', {name, email, message});
+      this.reset();
+    });
+
+    // Quick helper: replace placeholder links with your real links easily
+    // Example: document.querySelectorAll('.proj a')[0].href = 'https://your-site.example';
+
+    // Optional: small animation for logo
+    const logo = document.querySelector('.logo');
+    logo.addEventListener('mouseover', ()=> logo.style.transform='translateY(-4px) scale(1.02)');
+    logo.addEventListener('mouseout', ()=> logo.style.transform='translateY(0) scale(1)');
+  </script>
+</body>
+</html>
