@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About – Dallah Tech | Simon Emmanuel Madalla</title>
+  <meta name="description" content="About Simon Emmanuel Madalla, the creative web developer and founder of Dallah Tech." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #060a12;
+      --accent: #00b4ff;
+      --text: #e0eaff;
+      --card: rgba(10, 16, 30, 0.8);
+      --radius: 14px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: rgba(5,10,20,0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+    .logo { font-size: 22px; font-weight: 800; color: var(--accent); }
+    nav a {
+      color: #c4d4ff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+      transition: .3s;
+    }
+    nav a:hover { color: var(--accent); }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1610484826967-09c5720778f1?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+    }
+    .about-container {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      background: var(--card);
+      padding: 40px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      margin: 20px;
+    }
+    h1 { color: var(--accent); font-size: 36px; margin-bottom: 20px; text-align: center; }
+    p { margin-bottom: 16px; font-size: 17px; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #9fb0c8;
+      font-size: 14px;
+      background: rgba(0,0,0,0.6);
+      margin-top: auto;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      header { flex-direction: column; text-align: center; }
+      nav a { display: inline-block; margin: 10px 10px 0 10px; }
+      .about-container { padding: 25px; }
+      h1 { font-size: 26px; }
+      p { font-size: 16px; }
+      .hero { height: auto; padding: 100px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Dallah Tech</div>
+    <nav>
+      <a href="index2.html">Home</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="about-container">
+      <h1>About Me</h1>
+      <p>Hey there! 👋 I’m <strong>Simon Emmanuel Madalla</strong>, the creative mind behind <strong>Dallah Tech</strong> — where innovation meets simplicity.</p>
+
+      <p>I’m a <strong>Computer Science major</strong>, a <strong>web developer</strong>, and a <strong>tech enthusiast</strong> who enjoys turning ideas into living digital experiences. I love building clean, responsive, and interactive websites with <strong>HTML, CSS, and JavaScript</strong>.</p>
+
+      <p>I’ve created projects like <em>travel and tour sites</em>, <em>birthday wishing pages</em>, and <em>personal websites</em> that connect people and ideas online. I’m also passionate about <strong>Artificial Intelligence</strong>, using AI tools to make projects smarter and more creative. And with <strong>CorelDRAW</strong>, I design logos and visuals that make brands shine.</p>
+
+      <p>But more than anything, I’m someone who’s <strong>always learning</strong>. I believe real growth comes from <strong>sharing ideas, collaborating with others, and staying curious</strong>. I’m open to working with anyone who shares that same spark — whether it’s for a new project, a fresh idea, or just exploring what’s possible through tech.</p>
+
+      <p>Let’s build something amazing together! 💡</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Dallah Tech | Designed & Developed by Simon Emmanuel Madalla</p>
+  </footer>
+</body>
+</html>
