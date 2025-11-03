@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Emmanuel Madalla | Dallah Tech</title>
+    <style>
+        :root {
+            --dark-bg: #0f0f0f;
+            --darker-bg: #0a0a0a;
+            --accent: #00eeff;
+            --text: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --card-bg: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(to right, var(--darker-bg), var(--card-bg));
+            border-bottom: 1px solid #333;
+        }
+
+        .brand-name {
+            color: var(--accent);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        section {
+            background-color: var(--card-bg);
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #333;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: var(--text);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .skill-category {
+            background-color: var(--darker-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-category li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .skill-category li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .project-item, .education-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .project-item:last-child, .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .languages {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .language {
+            background-color: var(--darker-bg);
+            padding: 0.7rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .language strong {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.8rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .languages {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="brand-name">DALLAH TECH</h1>
+            <p class="tagline">Connecting and Inspiring through Technology</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>📧</strong>
+                    <a href="mailto:emmanuelmadall441@gmail.com">emmanuelmadall441@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <strong>📱</strong>
+                    <span>09011390588</span>
+                </div>
+                <div class="contact-item">
+                    <strong>📍</strong>
+                    <span>Nigeria</span>
+                </div>
+                <div class="contact-item">
+                    <strong>🌐</strong>
+                    <a href="index.html">Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="professional-summary">
+            <h2>💼 Professional Summary</h2>
+            <p class="summary">A passionate and creative Computer Science graduate with hands-on experience in web design, development, and AI-driven problem-solving. Skilled in HTML, CSS, JavaScript, and CorelDRAW, with a growing knowledge of Python. Simon is open to learning, teamwork, and collaboration—focused on using technology to create solutions that connect and inspire.</p>
+        </section>
+
+        <section class="core-skills">
+            <h2>🧠 Core Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <ul>
+                        <li>HTML / CSS</li>
+                        <li>JavaScript</li>
+                        <li>Web Deployment</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming & Tools</h3>
+                    <ul>
+                        <li>Python (Basic Knowledge)</li>
+                        <li>AI Tools for Problem Solving</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Design & Soft Skills</h3>
+                    <ul>
+                        <li>CorelDRAW (Logo & Graphic Design)</li>
+                        <li>Teamwork & Communication</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2>💻 Projects</h2>
+            <div class="project-item">
+                <h3>ExploreNaija Tours</h3>
+                <p>A travel and tour website demo with booking layout.</p>
+            </div>
+            <div class="project-item">
+                <h3>Birthday Wisher App</h3>
+                <p>An interactive greeting web app.</p>
+            </div>
+            <div class="project-item">
+                <h3>Local Business Landing Page</h3>
+                <p>Responsive site for small business branding.</p>
+            </div>
+        </section>
+
+        <section class="education">
+            <h2>🎓 Education</h2>
+            <div class="education-item">
+                <h3>B.Sc. Computer Science</h3>
+                <p>Sa’adu Zungur University, Bauchi State, Nigeria</p>
+            </div>
+        </section>
+
+        <section class="languages-section">
+            <h2>🌍 Languages</h2>
+            <div class="languages">
+                <div class="language"><strong>English:</strong> Fluent</div>
+                <div class="language"><strong>Japanese:</strong> Basic Proficiency</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
