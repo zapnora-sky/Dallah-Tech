@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dallah Tech — Simon Emmanuel Madalla Portfolio</title>
+  <meta name="description" content="Portfolio website of Simon Emmanuel Madalla (Dallah Tech). Web Developer, Designer, and AI Enthusiast." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {--bg: #0a0f1c;--accent: #00b4ff;--card: #111b2b;--muted: #9fb0c8;--radius: 14px;}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family: Inter, Arial, sans-serif;background: var(--bg);color: #e0eaff;line-height: 1.6;}
+    header{background: linear-gradient(90deg, #031226, #0a1a33);display:flex;justify-content:space-between;align-items:center;padding:20px 40px;position:sticky;top:0;z-index:10;box-shadow:0 3px 8px rgba(0,0,0,0.4);}
+    .logo{font-size:22px;font-weight:800;color:var(--accent)}
+    nav a{color:#c4d4ff;text-decoration:none;margin-left:20px;font-weight:600;transition:color .3s}
+    nav a:hover{color:var(--accent)}
+    .hero{background:url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;text-align:center;padding:100px 20px;position:relative;}
+    .hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.6)}
+    .hero-content{position:relative;z-index:1;max-width:800px;margin:auto}
+    .hero h1{font-size:42px;color:#fff;margin-bottom:10px}
+    .hero p{font-size:18px;color:#cdd6ea;margin-bottom:20px}
+    .btn{background:var(--accent);border:none;padding:12px 24px;border-radius:var(--radius);font-weight:700;color:#04121f;cursor:pointer}
+    .btn:hover{opacity:0.85}
+    section{padding:60px 20px;max-width:1000px;margin:auto}
+    h2{color:var(--accent);margin-bottom:20px}
+    .projects{display:grid;gap:20px}
+    .proj{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:0 3px 10px rgba(0,0,0,0.4)}
+    .proj a{color:var(--accent);text-decoration:none;font-weight:700}
+    footer{background:#06101f;color:var(--muted);text-align:center;padding:20px;font-size:14px;margin-top:60px}
+    @media (max-width:768px){.hero h1{font-size:30px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Dallah Tech</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Simon Emmanuel Madalla</h1>
+      <p>Computer Science Major • Web Developer • Designer • AI Enthusiast</p>
+      <a href="#projects"><button class="btn">View My Work</button></a>
+    </div>
+  </section>
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+      <div class="proj"><h3>ExploreNaija Tours</h3><p>Travel and tour website demo with booking layout.</p><a href="#" target="_blank">View Live</a></div>
+      <div class="proj"><h3>Birthday Wisher</h3><p>Interactive birthday greeting generator web app.</p><a href="#" target="_blank">View Live</a></div>
+      <div class="proj"><h3>Local Business Landing Page</h3><p>Sample landing page for a small business client.</p><a href="#" target="_blank">View Live</a></div>
+    </div>
+  </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a Computer Science major and freelance web developer with a passion for building efficient, visually appealing, and user-friendly web applications. I use HTML, CSS, JavaScript, and AI tools to create responsive and modern websites for individuals and small businesses. My design skills in CorelDRAW help me create unique branding and logos.</p>
+  </section>
+  <footer>
+    <p>© 2025 Dallah Tech | Designed & Developed by Simon Emmanuel Madalla</p>
+  </footer>
+</body>
+</html>

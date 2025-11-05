@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dallah Tech — Contact</title>
+<style>
+body{font-family:Arial,sans-serif;background:#030712;color:#e6efff;margin:0;}
+header{background:#050b16;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-size:24px;color:#00c6ff;font-weight:800;}
+nav a{color:#c4d4ff;margin-left:20px;text-decoration:none;font-weight:600;}
+nav a:hover{color:#00c6ff;}
+.hero{background:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600')center/cover no-repeat;padding:100px 20px;text-align:center;position:relative;}
+.hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.75);}
+.hero-content{position:relative;z-index:1;}
+form{max-width:600px;margin:60px auto;background:#0a0f1c;padding:30px;border-radius:12px;}
+input,textarea{width:100%;padding:12px;margin:8px 0;border:none;border-radius:8px;background:#111827;color:#e6efff;font-size:15px;}
+button{background:#00c6ff;border:none;padding:12px 28px;border-radius:10px;color:#04121f;font-weight:700;cursor:pointer;}
+button:hover{opacity:0.9;}
+footer{text-align:center;padding:20px;background:#050b16;color:#a0b3c9;margin-top:80px;}
+</style>
+</head>
+<body>
+<header><div class="logo">Dallah Tech</div><nav><a href="index.html">Home</a><a href="skills.html">Skills</a></nav></header>
+<section class="hero"><div class="hero-content"><h1>Contact Me</h1><p>Let's connect! Feel free to reach out for collaborations or inquiries.</p></div></section>
+<form onsubmit="event.preventDefault();alert('Message Sent! (demo only)');">
+<label>Name</label><input type="text" placeholder="Your Name" required />
+<label>Email</label><input type="email" placeholder="Your Email" required />
+<label>Message</label><textarea rows="5" placeholder="Your Message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+<footer>© 2025 Dallah Tech | Designed by Simon Emmanuel Madalla</footer>
+</body>
+</html>
